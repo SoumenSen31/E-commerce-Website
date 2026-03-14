@@ -144,14 +144,14 @@ const products = [
       "Modern LED desk lamp with adjustable brightness and color temperature. Perfect for study and work.",
   },
   {
-  id: 17,
-  name: "Portable Power Bank",
-  price: 44.99,
-  image:
-    "https://images.unsplash.com/photo-1687007081879-7c98c5d2487f?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  description:
-    "High-capacity portable power bank with fast charging support. Ideal for charging smartphones, tablets, and other devices on the go.",
-}
+    id: 17,
+    name: "Portable Power Bank",
+    price: 44.99,
+    image:
+      "https://images.unsplash.com/photo-1687007081879-7c98c5d2487f?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description:
+      "High-capacity portable power bank with fast charging support. Ideal for charging smartphones, tablets, and other devices on the go.",
+  },
 ];
 
 export function getProducts() {
@@ -159,5 +159,5 @@ export function getProducts() {
 }
 
 export function getProductById(id) {
-  return products.find((p) => p.id === Number(id));
+  return products.find((u) => u.id === Number(id));
 }
