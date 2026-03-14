@@ -22,14 +22,26 @@ export default function AuthProvider({ children }) {
     return { success: true };
   }
 
-  // function logIn() {}
-  function logOut(){
+  function logIn(email, password) {
+    const users = JSON.parse(localStorage.getItem("users") || "[]");
+    const user = users.find(
+      (u) => u.email === email && u.password === password,
+    );
+    if (!user) {
+      return { success: false, error: "Invalid email or password" };
+    }
+    localStorage.setItem("currentUserEmail", email);
+    setUser({ email });
+    return { success: true };
+  }
+
+  function logOut() {
     localStorage.removeItem("currentUserEmail");
     setUser(null);
   }
 
   return (
-    <AuthContext.Provider value={{ signup, user ,logOut}}>
+    <AuthContext.Provider value={{ signup, user, logOut, logIn }}>
       {children}
     </AuthContext.Provider>
   );

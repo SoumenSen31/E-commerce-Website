@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import AuthProvider, { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 const Auth = () => {
   const [mode, setMode] = useState("signup");
   const {
@@ -8,12 +9,23 @@ const Auth = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const { signup, user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { signup, logIn } = useContext(AuthContext);
+  const [error, setError] = useState(null);
 
   function onSubmit(data) {
-    // alert("user Signed Up");
-    signup(data.email, data.password);
+    setError(null);
+    let result;
+    if (mode === "signup") {
+      result = signup(data.email, data.password);
+    } else {
+      result = logIn(data.email, data.password);
+    }
+    if (result.success) {
+      navigate("/");
+    } else {
+      setError(result.error);
+    }
   }
   return (
     <div>
@@ -24,8 +36,11 @@ const Auth = () => {
           </h1>
           <div className="card-body">
             <form className="fieldset" onSubmit={handleSubmit(onSubmit)}>
-              {user && <p>user logged in {user.email}</p>}
-              <button onClick={() => logOut()}>logout</button>
+              {error && (
+                <div role="alert" className="alert alert-error alert-soft">
+                  <span>{error}</span>
+                </div>
+              )}
               <label className="text-white">Email</label>
               <input
                 {...register("email", { required: "Email is required" })}
@@ -58,7 +73,6 @@ const Auth = () => {
               {errors.password && (
                 <span className="text-red-500">{errors.password.message}</span>
               )}
-
               <button className="btn btn-neutral mt-4">
                 {mode === "signup" ? "Sign Up" : "Log In"}
               </button>
