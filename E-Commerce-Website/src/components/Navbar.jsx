@@ -8,9 +8,8 @@ const Navbar = () => {
     <div className="">
       <div className="sticky top-0 z-50 lg:px-10 navbar backdrop-blur-lg shadow-xl">
         <div className="navbar-start">
-          <Link to="/" className="btn btn-ghost text-xl">
-            Shopi{""}
-            <span className="text-orange-500">Hub</span>
+          <Link to="/" className="font-bold text-xl">
+            Shopi<span className="text-orange-500">-Hub</span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
