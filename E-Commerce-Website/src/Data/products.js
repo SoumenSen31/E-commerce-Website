@@ -71,6 +71,87 @@ const products = [
     description:
       "1080p HD webcam with auto-focus and built-in microphone. Ideal for video calls and streaming.",
   },
+  {
+    id: 9,
+    name: "Bluetooth Speaker",
+    price: 59.99,
+    image:
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500&h=500&fit=crop",
+    description:
+      "Portable Bluetooth speaker with deep bass and 12-hour battery life. Perfect for outdoor parties and travel.",
+  },
+  {
+    id: 10,
+    name: "Gaming Mouse Pad",
+    price: 19.99,
+    image:
+      "https://images.unsplash.com/photo-1629429408209-1f912961dbd8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description:
+      "Large RGB gaming mouse pad with smooth surface for precise tracking. Anti-slip rubber base.",
+  },
+  {
+    id: 11,
+    name: "External SSD",
+    price: 149.99,
+    image:
+      "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500&h=500&fit=crop",
+    description:
+      "High-speed portable SSD with 1TB storage. Perfect for backups, gaming, and fast file transfers.",
+  },
+  {
+    id: 12,
+    name: "Noise Cancelling Earbuds",
+    price: 119.99,
+    image:
+      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&h=500&fit=crop",
+    description:
+      "True wireless earbuds with active noise cancellation and crystal-clear sound quality.",
+  },
+  {
+    id: 13,
+    name: "4K Monitor",
+    price: 399.99,
+    image:
+      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&h=500&fit=crop",
+    description:
+      "Ultra HD 27-inch 4K monitor with vibrant colors and ultra-thin bezels. Ideal for designers and developers.",
+  },
+  {
+    id: 14,
+    name: "Laptop Backpack",
+    price: 69.99,
+    image:
+      "https://images.unsplash.com/photo-1514474959185-1472d4c4e0d4?w=500&h=500&fit=crop",
+    description:
+      "Durable laptop backpack with multiple compartments and USB charging port. Perfect for travel and work.",
+  },
+  {
+    id: 15,
+    name: "Smartphone Tripod",
+    price: 24.99,
+    image:
+      "https://images.unsplash.com/photo-1764162051493-83c9197c0b52?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description:
+      "Flexible tripod for smartphones and cameras. Great for vlogging, photography, and video recording.",
+  },
+  {
+    id: 16,
+    name: "Desk LED Lamp",
+    price: 34.99,
+    image:
+      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&h=500&fit=crop",
+    description:
+      "Modern LED desk lamp with adjustable brightness and color temperature. Perfect for study and work.",
+  },
+  {
+  id: 17,
+  name: "Portable Power Bank",
+  price: 44.99,
+  image:
+    "https://images.unsplash.com/photo-1687007081879-7c98c5d2487f?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  description:
+    "High-capacity portable power bank with fast charging support. Ideal for charging smartphones, tablets, and other devices on the go.",
+}
 ];
 
 export function getProducts() {

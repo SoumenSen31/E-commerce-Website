@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import AuthProvider, { AuthContext } from "../context/AuthContext";
 const Auth = () => {
   const [mode, setMode] = useState("signup");
   const {
@@ -8,8 +9,11 @@ const Auth = () => {
     formState: { errors },
   } = useForm();
 
-  function onSubmit() {
-    alert("user Signed Up");
+  const { signup, user, logOut } = useContext(AuthContext);
+
+  function onSubmit(data) {
+    // alert("user Signed Up");
+    signup(data.email, data.password);
   }
   return (
     <div>
@@ -20,6 +24,8 @@ const Auth = () => {
           </h1>
           <div className="card-body">
             <form className="fieldset" onSubmit={handleSubmit(onSubmit)}>
+              {user && <p>user logged in {user.email}</p>}
+              <button onClick={() => logOut()}>logout</button>
               <label className="text-white">Email</label>
               <input
                 {...register("email", { required: "Email is required" })}

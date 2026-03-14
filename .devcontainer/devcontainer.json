@@ -48,7 +48,7 @@
   },
 
   // Runs once after the container is created
-  "postCreateCommand": "cd Frontend && npm install vite@7 @vitejs/plugin-react@4 tailwindcss @tailwindcss/vite && npm install",
+  "postCreateCommand": "cd E-Commerce-Website && npm install vite@7 @vitejs/plugin-react@4 tailwindcss @tailwindcss/vite && npm install",
 
   "remoteUser": "node"
 }

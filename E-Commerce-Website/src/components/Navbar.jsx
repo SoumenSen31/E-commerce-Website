@@ -25,7 +25,7 @@ const Navbar = () => {
           <Link to="/auth" className="btn btn-outline btn-primary">
             Login
           </Link>
-          <Link to="/auth" className="btn btn-outline border border-orange-500">
+          <Link to="/auth" className="btn btn-outline text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white">
             Signup
           </Link>
         </div>
