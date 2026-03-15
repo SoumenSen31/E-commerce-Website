@@ -6,7 +6,7 @@ const Home = () => {
   const products = getProducts();
   return (
     <>
-      <div className="flex justify-center items-center flex-col mt-10 lg:mt-20 tracking-wide px-5 text-center">
+      <div className="flex justify-center items-center flex-col mt-10 lg:mt-10 tracking-wide px-5 text-center">
         <h1 className="text-3xl lg:text-5xl font-bold ">
           Welcome to the Shopi-<span className="text-orange-500">Hub</span>
         </h1>
