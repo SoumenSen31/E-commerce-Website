@@ -11,7 +11,7 @@ const Home = () => {
           Welcome to the Shopi-<span className="text-orange-500">Hub</span>
         </h1>
         <p className="mt-5 text-neutral-300">
-          Discover out new and exclusive products
+          Discover our new and exclusive products!
         </p>
       </div>
       <div className="w-full h-auto px-5 lg:px-20">
