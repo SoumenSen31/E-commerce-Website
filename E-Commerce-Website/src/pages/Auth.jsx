@@ -1,9 +1,21 @@
+import { useSearchParams } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 const Auth = () => {
+  // const [mode, setMode] = useState("signup");
+  const [searchParams] = useSearchParams();
   const [mode, setMode] = useState("signup");
+
+  useEffect(() => {
+    const urlMode = searchParams.get("mode");
+    if (urlMode === "login" || urlMode === "signup") {
+      setMode(urlMode);
+    }
+  }, [searchParams]);
+
   const {
     register,
     handleSubmit,

@@ -2,8 +2,12 @@ import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
 const Checkout = () => {
-  const { updateQuantity, removeFromCart, getCartItemsWithProducts, getCartTotal } =
-    useContext(CartContext);
+  const {
+    updateQuantity,
+    removeFromCart,
+    getCartItemsWithProducts,
+    getCartTotal,
+  } = useContext(CartContext);
 
   const cartItems = getCartItemsWithProducts();
   const getTotal = getCartTotal();
@@ -12,38 +16,39 @@ const Checkout = () => {
     <>
       <p className="text-lg font-bold mb-2 text-center">Order Summary</p>
 
-      <div className="flex justify-center items-start gap-10 mt-10">
-
+      <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10 mt-10 px-4">
         {/* Cart Items */}
-        <div className="flex flex-col gap-4">
-          {cartItems.map((item,index) => (
-            <div key={item.id} className="w-120 border border-neutral-700">
+        <div className="flex flex-col gap-4 w-full lg:w-auto">
+          {cartItems.map((item, index) => (
+            <div
+              key={item.id}
+              className="w-full lg:w-[40rem] border border-neutral-700"
+            >
               <ul className="list bg-base-100 rounded-box shadow-md">
                 <li className="list-row items-center">
-
-                  <div className="text-4xl font-thin opacity-30 tabular-nums">
-                    {index+1}
+                  <div className="text-2xl lg:text-4xl font-thin opacity-30 tabular-nums hidden sm:block">
+                    {index + 1}
                   </div>
 
                   <div>
                     <img
-                      className="size-15 rounded-box"
+                      className="size-16 rounded-box object-cover"
                       src={item.product.image}
                     />
                   </div>
 
                   <div className="list-col-grow">
-                    <div className="font-bold">{item.product.name}</div>
+                    <div className="font-bold text-sm sm:text-base">
+                      {item.product.name}
+                    </div>
                     <div className="text-xs uppercase font-semibold opacity-60">
                       {item.product.price}
                     </div>
                   </div>
 
                   <div>
-                    <form className="max-w-xs">
-
+                    <div className="flex flex-col items-center gap-2">
                       <div className="flex items-center border border-neutral-300 rounded-lg overflow-hidden w-fit">
-
                         <button
                           type="button"
                           className="px-3 py-2 bg-base-200 hover:bg-base-300 transition"
@@ -67,7 +72,6 @@ const Checkout = () => {
                         >
                           +
                         </button>
-
                       </div>
 
                       <p className="text-center font-bold">
@@ -80,10 +84,8 @@ const Checkout = () => {
                       >
                         Remove
                       </button>
-
-                    </form>
+                    </div>
                   </div>
-
                 </li>
               </ul>
             </div>
@@ -91,8 +93,7 @@ const Checkout = () => {
         </div>
 
         {/* Order Summary Card */}
-        <div className="bg-base-300 shadow-lg rounded-xl p-6 w-80">
-
+        <div className="bg-base-300 shadow-lg rounded-xl p-6 w-full max-w-sm lg:w-80">
           <h2 className="text-xl font-bold mb-4">Total</h2>
 
           <div className="flex justify-between text-gray-600 mb-2">
@@ -107,12 +108,13 @@ const Checkout = () => {
 
           <hr className="mb-4" />
 
-          <button onClick={()=>alert("Order Placed")} className="btn btn-primary w-full">
+          <button
+            onClick={() => alert("Order Placed")}
+            className="btn btn-primary w-full"
+          >
             Place Order
           </button>
-
         </div>
-
       </div>
     </>
   );

@@ -22,16 +22,16 @@ const ProductDetails = () => {
     ? `(${productInCaart.quantity})`
     : "";
   return (
-    <div className="flex justify-center items-center min-h-[80vh]">
-      <div className="bg-neutral-700 w-[50vw] h-auto flex justify-center items-center ">
-        <div className="flex-1 bg-white p-4 ">
+    <div className="flex justify-center items-center min-h-[80vh] py-10 px-4">
+      <div className="bg-neutral-700 w-full lg:w-[60vw] h-auto flex flex-col lg:flex-row justify-center items-center rounded-xl overflow-hidden shadow-2xl">
+        <div className="flex-1 bg-white p-4 w-full">
           <img
             className="bg-contain w-full"
             src={product.image}
             alt={product.name}
           />
         </div>
-        <div className="flex-1 p-4 flex flex-col">
+        <div className="flex-1 p-8 flex flex-col w-full">
           <button
             onClick={() => navigate("/")}
             className="btn btn-dash border-neutral-500 text-neutral-500 hover:text-white hover:bg-transparent hover:border-white mb-2"
